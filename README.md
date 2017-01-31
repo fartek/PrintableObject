@@ -4,23 +4,23 @@ Stringifies objects, arrays and everything in between.
 ## Usage
 1. install the node package using:
   ```
-  npm install --save PrintableObject
+  npm install --save printable-object
   ```
 2. import the package into your file/project using:
 
   ```
-  import PrintableObject from 'PrintableObject';
+  import PrintableObject from 'printable-object';
   ```
   or
   
   ```
-  const PrintableObject = require('PrintableObject');
+  const PrintableObject = require('printable-object');
   ```
 3. Use it! (Check out the example)
 
 ## Parameters
 ```
-PrintableObject(param, padSize, initialPadding, initial**);
+PrintableObject(param, padSize, initialPadding, initial**); // returns the stringified version of the input param
 ```
 
 - **param** the variable you are trying to stringify
