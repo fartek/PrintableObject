@@ -1,0 +1,26 @@
+{
+  "name": "printable-object",
+  "version": "1.0.0",
+  "description": "Stringifies objects, arrays and everything in between.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fartek/PrintableObject.git"
+  },
+  "keywords": [
+    "stringify",
+    "object",
+    "printable",
+    "print",
+    "string"
+  ],
+  "author": "Timotej Fartek",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fartek/PrintableObject/issues"
+  },
+  "homepage": "https://github.com/fartek/PrintableObject#readme"
+}
