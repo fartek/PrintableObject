@@ -26,7 +26,7 @@ const _PrintableObject = (param, padSize = 2, initialPadding = 0, quoteChar = '\
         if (val && typeof val === 'object' && !Array.isArray(val)) { // It is an object (as in {}) and not an array
           objString += `${Array(tabs + 1).join(' ')}${key}: {\n${_PrintableObject(val, padSize, tabs + padSize, quoteChar, false)}${Array(tabs + 1).join(' ')}},\n`;
         } else if (val && Array.isArray(val)) { // It is an array
-          objString += `${Array(tabs + 1).join(' ')}${key}: [\n${_PrintableObject(val, padSize, tabs + padSize, qouteChar, false)}${Array(tabs + 1).join(' ')}],\n`;
+          objString += `${Array(tabs + 1).join(' ')}${key}: [\n${_PrintableObject(val, padSize, tabs + padSize, quoteChar, false)}${Array(tabs + 1).join(' ')}],\n`;
         } else if (typeof val === 'number') { // It is a number
           objString += `${Array(tabs + 1).join(' ')}${key}: ${val},\n`;
         } else { // Everything else (usually string)
