@@ -6,11 +6,11 @@
  * @param   {Integer}   initialPadding  The amount of initial spaces for the left-padding.
  * @returns {String} The stringified version of the object, array, whatever was passed in.
  */
-const PrintableObject = (param, padSize = 2, initialPadding = 0) => {
-  return _PrintableObject(param, padSize, initialPadding, true);
+const PrintableObject = (param, padSize = 2, initialPadding = 0, quoteChar = '\'') => {
+  return _PrintableObject(param, padSize, initialPadding, quoteChar, true);
 };
 
-const _PrintableObject = (param, padSize = 2, initialPadding = 0, initial = true) => {
+const _PrintableObject = (param, padSize = 2, initialPadding = 0, quoteChar = '\'', initial = true) => {
   // If the param is an Object (object or array),
   //   1. Prepend everything with the proper brackets (only once - only if it is initial)
   //   2. pad everything properly
@@ -30,7 +30,7 @@ const _PrintableObject = (param, padSize = 2, initialPadding = 0, initial = true
         } else if (typeof val === 'number') { // It is a number
           objString += `${Array(tabs + 1).join(' ')}${key}: ${val},\n`;
         } else { // Everything else (usually string)
-          objString += `${Array(tabs + 1).join(' ')}${key}: '${val}',\n`;
+          objString += `${Array(tabs + 1).join(' ')}${key}: ${quoteChar}${val}${quoteChar},\n`;
         }
       }
     }
@@ -46,7 +46,7 @@ const _PrintableObject = (param, padSize = 2, initialPadding = 0, initial = true
       } else if (typeof elem === 'number') {
         elems += `${Array(tabs + 1).join(' ')}${elem},\n`;
       } else {
-        elems += `${Array(tabs + 1).join(' ')}'${elem}',\n`;
+        elems += `${Array(tabs + 1).join(' ')}${quoteChar}${elem}${quoteChar},\n`;
       }
     }
     return `${elems}${initial ? Array(initialPadding + 1).join(' ') + ']\n' : ''}`;
@@ -56,7 +56,7 @@ const _PrintableObject = (param, padSize = 2, initialPadding = 0, initial = true
     return `${Array(tabs + 1).join(' ')}${param}\n`;
   }
   // For everything else - suround it with quotes
-  return `${Array(tabs + 1).join(' ')}'${param}'\n`;
+  return `${Array(tabs + 1).join(' ')}${quoteChar}${param}${quoteChar}\n`;
 }
 
 module.exports = PrintableObject;
