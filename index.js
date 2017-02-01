@@ -24,9 +24,9 @@ const _PrintableObject = (param, padSize = 2, initialPadding = 0, quoteChar = '\
         // recursivelly repeat
         const val = param[key];
         if (val && typeof val === 'object' && !Array.isArray(val)) { // It is an object (as in {}) and not an array
-          objString += `${Array(tabs + 1).join(' ')}${key}: {\n${PrintableObject(val, padSize, tabs + padSize, false)}${Array(tabs + 1).join(' ')}},\n`;
+          objString += `${Array(tabs + 1).join(' ')}${key}: {\n${_PrintableObject(val, padSize, tabs + padSize, quoteChar, false)}${Array(tabs + 1).join(' ')}},\n`;
         } else if (val && Array.isArray(val)) { // It is an array
-          objString += `${Array(tabs + 1).join(' ')}${key}: [\n${PrintableObject(val, padSize, tabs + padSize, false)}${Array(tabs + 1).join(' ')}],\n`;
+          objString += `${Array(tabs + 1).join(' ')}${key}: [\n${_PrintableObject(val, padSize, tabs + padSize, qouteChar, false)}${Array(tabs + 1).join(' ')}],\n`;
         } else if (typeof val === 'number') { // It is a number
           objString += `${Array(tabs + 1).join(' ')}${key}: ${val},\n`;
         } else { // Everything else (usually string)
@@ -40,9 +40,9 @@ const _PrintableObject = (param, padSize = 2, initialPadding = 0, quoteChar = '\
     let elems = initial ? `${Array(initialPadding + 1).join(' ')}[\n` : '';
     for (const elem of param) {
       if (elem && typeof elem === 'object' && !Array.isArray(elem)) {
-        elems += `${Array(tabs + 1).join(' ')}{\n${PrintableObject(elem, padSize, tabs + padSize, false)}${Array(tabs + 1).join(' ')}},\n`;
+        elems += `${Array(tabs + 1).join(' ')}{\n${_PrintableObject(elem, padSize, tabs + padSize, quoteChar, false)}${Array(tabs + 1).join(' ')}},\n`;
       } else if (elem && Array.isArray(elem)) {
-        elems += `${Array(tabs + 1).join(' ')}[\n${PrintableObject(elem, padSize, tabs + padSize, false)}${Array(tabs + 1).join(' ')}],\n`;
+        elems += `${Array(tabs + 1).join(' ')}[\n${_PrintableObject(elem, padSize, tabs + padSize, quoteChar, false)}${Array(tabs + 1).join(' ')}],\n`;
       } else if (typeof elem === 'number') {
         elems += `${Array(tabs + 1).join(' ')}${elem},\n`;
       } else {
