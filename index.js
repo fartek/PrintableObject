@@ -4,12 +4,13 @@
  * @param  {Any type}   param           The variable which is to be stringified.
  * @param   {Integer}   padSize         Number of spaces to left-pad with
  * @param   {Integer}   initialPadding  The amount of initial spaces for the left-padding.
- * @param   {Boolean}   initial         Describes if the function call is initial.
- *                                      Should be set to true for the first function call,
- *                                      and false for every recursive call.
  * @returns {String} The stringified version of the object, array, whatever was passed in.
  */
-const PrintableObject = (param, padSize = 2, initialPadding = 0, initial = true) => {
+const PrintableObject = (param, padSize = 2, initialPadding = 0) => {
+  return _PrintableObject(param, padSize, initialPadding, true);
+};
+
+const _PrintableObject = (param, padSize = 2, initialPadding = 0, initial = true) => {
   // If the param is an Object (object or array),
   //   1. Prepend everything with the proper brackets (only once - only if it is initial)
   //   2. pad everything properly
