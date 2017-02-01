@@ -3,19 +3,11 @@ Stringifies objects, arrays and everything in between.
 
 ## Usage
 1. install the node package using:
-  ```
-  npm install --save printable-object
-  ```
+    ```npm install --save printable-object```
 2. import the package into your file/project using:
-
-  ```
-  import PrintableObject from 'printable-object';
-  ```
-  or
-  
-  ```
-  const PrintableObject = require('printable-object');
-  ```
+    ```import PrintableObject from 'printable-object';```
+    or
+    ```const PrintableObject = require('printable-object');```
 3. Use it! (Check out the example)
 
 ## Parameters
