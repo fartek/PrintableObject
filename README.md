@@ -20,9 +20,10 @@ Stringifies objects, arrays and everything in between.
 
 ## Parameters
 ```
-PrintableObject(param, padSize, initialPadding); // returns the stringified version of the input param
+PrintableObject(param, padSize, initialPadding, quoteChar); // returns the stringified version of the input param
 ```
 
-- **param** the variable you are trying to stringify
-- **padSize** number of space characters to left-pad each line with
-- **initialPadding** the initial number of left-pad spaces
+- **param** the variable you are trying to stringify.
+- **padSize** number of space characters to left-pad each line with. *default = 2*
+- **initialPadding** the initial number of left-pad spaces. *default = 0*
+- **quoteChar** the quotation character used to surround strings. *default = '*
