@@ -1,6 +1,6 @@
 {
   "name": "printable-object",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Stringifies objects, arrays and everything in between.",
   "main": "index.js",
   "scripts": {
