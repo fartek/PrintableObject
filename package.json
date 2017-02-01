@@ -4,7 +4,9 @@
   "description": "Stringifies objects, arrays and everything in between.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "./node_modules/.bin/babel --presets env -d lib src",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -22,5 +24,9 @@
   "bugs": {
     "url": "https://github.com/fartek/PrintableObject/issues"
   },
-  "homepage": "https://github.com/fartek/PrintableObject#readme"
+  "homepage": "https://github.com/fartek/PrintableObject#readme",
+  "devDependencies": {
+    "babel-cli": "^6.22.2",
+    "babel-preset-env": "^1.1.8"
+  }
 }
